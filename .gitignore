@@ -1,0 +1,11 @@
+# scrub outputs -- never commit these, they contain real data
+*.mapping.json
+redacted_*
+restored.txt
+
+.DS_Store
+Thumbs.db
+*.swp
+*~
+.vscode/
+.idea/

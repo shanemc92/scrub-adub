@@ -1,0 +1,25 @@
+INCIDENT NOTES -- INC0042719
+Raised by: Ciara Walsh (ciara.walsh@northgate-labs.ie), +353 87 419 2288
+Assigned to: Tomasz Nowak, Security Operations
+
+Summary
+-------
+At 09:14 a workstation on the finance VLAN (10.44.12.87, MAC 00:1A:2B:3C:4D:5E)
+began beaconing to hxxps://cdn-metrics-sync.example-cdn.net every 45 seconds.
+Second host affected: srv-fin02.northgate.internal (10.44.12.9).
+
+The user, Aoife Byrne, reported a phishing mail from billing@invoices-northgate.co
+containing a link. Her manager Sean Doyle confirmed she opened the attachment on
+her laptop at 42 Oakfield Road, Ashbourne, D04 X1Y2 while working from home.
+
+Containment
+-----------
+Isolated both hosts via EDR. Rotated the service account credential
+(api_key: sk-live-8f2Ba91cD73eF04gH55i) and revoked the token
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMDAyIn0.dBjftJeZ4CVPmB92K27uhbUJU1p1r
+
+Follow-up
+---------
+Finance confirmed no card data touched the host. Test card on file 4111 1111 1111 1111
+remains unused. Refund account IE29 AIBK 9311 5212 3456 78 unchanged.
+Ticket to be reviewed by Emma Walsh on Friday.

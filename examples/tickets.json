@@ -1,0 +1,36 @@
+{
+  "export": "servicedesk-weekly",
+  "generated": "2026-08-17T08:00:00Z",
+  "tickets": [
+    {
+      "id": "INC0042719",
+      "requester": "Ciara Walsh",
+      "requester_email": "ciara.walsh@northgate-labs.ie",
+      "asset": "LAP-4417",
+      "source_ip": "10.44.12.87",
+      "cost_centre": "FIN-NORTH-02",
+      "summary": "Workstation beaconing to unknown CDN host after phishing mail",
+      "resolution": "Host isolated, credentials rotated, user re-trained"
+    },
+    {
+      "id": "INC0042733",
+      "requester": "Aoife Byrne",
+      "requester_email": "aoife.byrne@northgate-labs.ie",
+      "asset": "LAP-2210",
+      "source_ip": "10.44.12.61",
+      "cost_centre": "FIN-NORTH-02",
+      "summary": "MFA reset requested after suspected credential reuse",
+      "resolution": "Reset by Tomasz Nowak, no further activity observed"
+    },
+    {
+      "id": "INC0042751",
+      "requester": "Sean Doyle",
+      "requester_email": "sean.doyle@northgate-labs.ie",
+      "asset": "DSK-0031",
+      "source_ip": "10.44.12.4",
+      "cost_centre": "FIN-NORTH-01",
+      "summary": "Request to whitelist srv-fin02.northgate.internal for reporting",
+      "resolution": "Approved, firewall change CR-1042 raised"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+employee_id,full_name,email,department,manager,workstation,ip_address,phone,home_address
+EMP01021,Ciara Walsh,ciara.walsh@northgate-labs.ie,Finance,Sean Doyle,LAP-4417,10.44.12.87,+353 87 419 2288,"42 Oakfield Road, Ashbourne, D04 X1Y2"
+EMP01044,Tomasz Nowak,tomasz.nowak@northgate-labs.ie,Security Operations,Emma Walsh,LAP-9902,10.44.9.31,+353 86 220 7741,"11 Priory Court, Swords, K67 F2P9"
+EMP01088,Aoife Byrne,aoife.byrne@northgate-labs.ie,Finance,Sean Doyle,LAP-2210,10.44.12.61,+353 85 993 1120,"7 Willow Grove, Navan, C15 Y284"
+EMP01102,Sean Doyle,sean.doyle@northgate-labs.ie,Finance,Emma Walsh,DSK-0031,10.44.12.4,+353 1 234 5678,"88 Rathmore Avenue, Trim, C15 R7T3"
