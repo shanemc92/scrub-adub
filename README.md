@@ -154,14 +154,57 @@ There is no backend. No analytics, no telemetry, no storage beyond a single `loc
 
 The only outbound request in the file is the Google Fonts stylesheet in `<head>`. Delete those three `<link>` lines and it falls back to system fonts and runs fully offline, air-gapped, from a USB stick, wherever.
 
----
+## Appearance
 
-## Themes
+Three independent controls in the top bar, each saved separately, so changing
+one never resets the others.
 
-`Terminal` (dark) and `Modern` (light), switchable top right, remembered between visits.
+**Design** sets the shape language, surface hue and backdrop texture:
 
----
+| Design | Shape | Backdrop |
+|---|---|---|
+| `chamfer` | Cut corners | Instrument grid. The default |
+| `console` | Square, graphite | Horizontal scan rules |
+| `circuit` | Slight radius, board green | Via holes, copper edge |
+| `contour` | Soft radii, violet | A single accent wash |
+
+**Mode** sets the lightness ramp only, and every design supports every mode:
+
+| Mode | Base |
+|---|---|
+| `dark` | Lights off. The default |
+| `dusk` | Dark, lifted off black, for long sessions |
+| `sepia` | Warm paper, bright but low glare |
+| `light` | Cool white, closest to print |
+
+**Accent** is any hue. Eight presets are offered, plus a hue/chroma wheel and a
+hex field for matching a brand colour exactly.
+
+That is sixteen design-and-mode combinations, on any accent.
+
+Geometry is deliberately shared: every design uses the same bar height, panel
+padding, control padding, type sizes and grid, so switching design changes
+colour, radius and ornament without reflowing the page.
+
+The accent's lightness is not taken from the picker. The mode proposes a
+starting lightness, then the accent is walked away from the surface it sits on
+until it clears a measured contrast ratio. HSL lightness is not perceptual, so
+a fixed value would leave some hues washed out on white and others muddy on
+black; measuring instead is what lets any hue, including a near-white or
+near-black pick, stay readable. Status colours (`--ok`, `--warn`, `--bad`)
+stay semantic and are kept clear of the accent range, so the accent never
+reads as state.
+
+Printing forces one light palette regardless of design and mode, drops the
+backdrop texture and the bar controls, and keeps the bar as a masthead so the
+logo and tool name land on the page.
+
+## Deployment
+
+`_headers` (Netlify, Cloudflare Pages) and `.htaccess` (Apache) carry the same
+CSP and hardening headers. Neither is needed to run the file locally, including
+from `file://`.
 
 ## Licence
 
-MIT — see [LICENSE](LICENSE).
+MIT. See `LICENSE`.

@@ -2,10 +2,10 @@
 *.mapping.json
 redacted_*
 restored.txt
+*~
 
 .DS_Store
 Thumbs.db
 *.swp
-*~
 .vscode/
 .idea/
