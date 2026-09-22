@@ -1,0 +1,22 @@
+# gitleaks configuration for scrub-adub.
+#
+# Keep every default rule, and allowlist one specific, well-understood false
+# positive rather than disabling a rule or skipping a scan.
+[extend]
+useDefault = true
+
+[[allowlists]]
+description = """
+examples/ holds sample input for a redaction tool. The whole point of those
+files is to contain things that look like secrets - a JWT, an API key, a test
+card number - so there is something for the tool to find and redact. They are
+fabricated: the JWT decodes to the jwt.io sample payload {"sub":"1002"}, the
+key is sk-live-8f2Ba91cD73eF04gH55i, and the card is 4111 1111 1111 1111, the
+standard Visa test number. None of it is real and none of it grants access to
+anything.
+
+Scoped to examples/ only, so a credential committed anywhere else in the repo
+still fails the scan. If a real value is ever needed to reproduce a bug, it
+does not belong in this directory.
+"""
+paths = ['''^examples/''']
